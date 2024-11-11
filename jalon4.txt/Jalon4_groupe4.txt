@@ -1,0 +1,19 @@
+
+allow-hotplug ens18 ens19 ens 20
+iface ens18 inet dhcp
+
+iface ens19 inet static
+    address 172.16.4.1
+    netmask 255.255.255.240
+
+iface ens20 inet static
+    address 172.16.4.17
+    netmask 255.255.255.240
+
+#Route : 
+up /bin/ip route add 172.16.4.32/28 via 172.16.4.33 dev ens19
+
+
+
+
+

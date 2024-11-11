@@ -1,0 +1,75 @@
+Je 
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname RouTG
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+!
+resource policy
+!
+!
+!
+ip cef
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ ip address 172.16.4.33 255.255.255.240
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ ip address 172.16.4.14 255.255.255.240
+ ip helper-address 172.16.4.1
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/2/0
+!
+interface FastEthernet0/2/1
+!
+interface FastEthernet0/2/2
+!
+interface FastEthernet0/2/3
+!
+interface Vlan1
+ no ip address
+!
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+login
+!
+schedular allocate 20000 1000
+!
+end
